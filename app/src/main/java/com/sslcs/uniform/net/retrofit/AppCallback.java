@@ -1,23 +1,18 @@
 package com.sslcs.uniform.net.retrofit;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import rx.Subscriber;
 
-public abstract class AppCallback<T> implements Callback<T> {
-    @Override
-    public void onResponse(Call<T> call, Response<T> response) {
-        onSuccess(response.body());
-    }
-
-    @Override
-    public void onFailure(Call<T> call, Throwable t) {
-        onError(t);
-    }
-
-    //请求成功回调
+public abstract class AppCallback<T> extends Subscriber<T> {
     public abstract void onSuccess(T response);
 
-    //请求失败回调
+    @Override
     public abstract void onError(Throwable e);
+
+    @Override
+    public void onNext(T t) {
+        onSuccess(t);
+    }
+
+    @Override
+    public void onCompleted() { }
 }

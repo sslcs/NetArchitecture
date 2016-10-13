@@ -6,9 +6,9 @@ public abstract class NetCallback<T> extends AppCallback<T> {
     /**
      * 请求成功时回调接口
      *
-     * @param t 返回结果
+     * @param response 返回结果
      */
-    public abstract void onSuccess(T t);
+    public abstract void onSuccess(T response);
 
     /**
      * 请求失败时回调接口

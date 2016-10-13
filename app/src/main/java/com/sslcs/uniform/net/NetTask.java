@@ -1,18 +1,20 @@
 package com.sslcs.uniform.net;
 
-import retrofit2.Call;
+import rx.Subscription;
 
-public class NetTask implements Task {
-    private Call call;
+public class NetTask {
+    private Subscription task;
 
-    public NetTask(Call call) {
-        this.call = call;
+    public NetTask(Subscription task) {
+        this.task = task;
     }
 
-    @Override
+    /**
+     * 取消网络请求
+     */
     public void cancel() {
-        if (call != null && !call.isCanceled()) {
-            call.cancel();
+        if (task != null && !task.isUnsubscribed()) {
+            task.unsubscribe();
         }
     }
 }

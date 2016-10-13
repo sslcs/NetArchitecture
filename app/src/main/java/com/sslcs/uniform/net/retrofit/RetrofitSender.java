@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitSender {
@@ -18,6 +19,7 @@ public class RetrofitSender {
 
         Retrofit retrofit = new Retrofit.Builder().client(okBuilder.build())
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .baseUrl("https://api.douban.com/v2/movie/")
             .build();
         server = retrofit.create(AppServer.class);
