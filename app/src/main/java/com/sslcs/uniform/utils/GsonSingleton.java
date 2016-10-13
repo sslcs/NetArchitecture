@@ -1,4 +1,4 @@
-package com.reven.netarchitecture.utils;
+package com.sslcs.uniform.utils;
 
 import com.google.gson.Gson;
 

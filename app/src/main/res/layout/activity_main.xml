@@ -8,50 +8,14 @@
         android:orientation="vertical"
         android:padding="@dimen/activity_vertical_margin"
         tools:context=".ui.MainActivity">
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onClickNew"
-            android:orientation="horizontal">
-            <FrameLayout
-                android:id="@+id/v_left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1">
-                <FrameLayout
-                    android:id="@+id/v_inner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@android:color/black">
-                    <ImageView
-                        android:id="@+id/iv_bg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/ic_launcher"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|center"
-                        android:text="z"
-                        android:textColor="@android:color/white"/>
-                </FrameLayout>
-            </FrameLayout>
-            <FrameLayout
-                android:id="@+id/v_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/holo_blue_bright">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@mipmap/ic_launcher"/>
-            </FrameLayout>
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
+        <ListView
+            android:id="@+id/lv_movies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </layout>
 

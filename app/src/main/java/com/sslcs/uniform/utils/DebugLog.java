@@ -1,9 +1,9 @@
-package com.reven.netarchitecture.utils;
+package com.sslcs.uniform.utils;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.reven.netarchitecture.BuildConfig;
+import com.sslcs.uniform.BuildConfig;
 
 import java.io.File;
 import java.io.FileWriter;

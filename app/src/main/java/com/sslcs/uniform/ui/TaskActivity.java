@@ -1,12 +1,9 @@
-package com.reven.netarchitecture.ui;
+package com.sslcs.uniform.ui;
 
-import com.reven.netarchitecture.net.Task;
+import com.sslcs.uniform.net.Task;
 
 import java.util.ArrayList;
 
-/**
- * Created by LiuCongshan on 2016/9/25.
- */
 public class TaskActivity extends BaseActivity {
     private ArrayList<Task> tasks;
 

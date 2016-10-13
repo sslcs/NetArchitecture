@@ -1,8 +1,5 @@
-package com.reven.netarchitecture.net;
+package com.sslcs.uniform.net;
 
-/**
- * Created by Reven on 2016/9/25.
- */
 public interface Task {
     /**
      * 取消网络请求
