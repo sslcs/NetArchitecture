@@ -15,5 +15,10 @@ public abstract class NetCallback<T> extends AppCallback<T> {
      *
      * @param e 错误信息
      */
-    public abstract void onError(Throwable e);
+    public abstract void onFail(Throwable e);
+
+    /**
+     * 结果返回时的预处理
+     */
+    public void preprocessor(){}
 }

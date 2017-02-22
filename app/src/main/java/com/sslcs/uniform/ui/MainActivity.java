@@ -24,15 +24,21 @@ public class MainActivity extends TaskActivity {
     public void getTop250() {
         NetCallback<Top250Response> callback = new NetCallback<Top250Response>() {
             @Override
+            public void preprocessor() {
+                super.preprocessor();
+                // finish loading
+            }
+
+            @Override
             public void onSuccess(Top250Response response) {
-                DebugLog.e("onSuccess : " + response.title +" count: " + response.subjects.size());
+                DebugLog.e("onSuccess : " + response.title + " count: " + response.subjects.size());
                 MovieAdapter adapter = new MovieAdapter(MainActivity.this, response.subjects);
                 binding.lvMovies.setAdapter(adapter);
                 binding.tvTitle.setText(response.title);
             }
 
             @Override
-            public void onError(Throwable e) {
+            public void onFail(Throwable e) {
                 DebugLog.e("onError : " + e.getMessage());
             }
         };
